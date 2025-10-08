@@ -1,0 +1,11 @@
+torch>=1.11
+torchvision
+numpy
+scikit-learn
+pillow
+matplotlib
+albumentations
+tqdm
+opencv-python
+fastapi
+uvicorn
