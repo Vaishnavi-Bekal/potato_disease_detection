@@ -11,5 +11,5 @@ python src/infer.py --model-path ./best.pth --img path/to/image.jpg
 
 ## API
 ```bash
-uvicorn src.api.app:app --host localhost --port 8080
+ python -m uvicorn src.api.app:app --host localhost --port 8080 
 ```
