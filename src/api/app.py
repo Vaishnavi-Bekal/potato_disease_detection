@@ -19,7 +19,7 @@ app.add_middleware(
 
 # --- CONFIG ---
 MODEL_PATH = "best.pth"
-CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
+CLASS_NAMES = ["Early Blight","Healthy" ,"Late Blight", ]
 THRESHOLD = 0.9  # confidence cutoff for "Unknown"
 
 # --- LOAD MODEL ONCE ---

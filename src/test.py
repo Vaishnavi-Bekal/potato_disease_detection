@@ -21,7 +21,7 @@ test_transform = transforms.Compose([
 ])
 
 # --- Load Test Dataset ---
-test_dataset = datasets.ImageFolder(root="src/data/val", transform=test_transform)
+test_dataset = datasets.ImageFolder(root="src/data/test", transform=test_transform)
 test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
 # --- Load Model ---

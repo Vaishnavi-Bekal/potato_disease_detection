@@ -4,7 +4,7 @@ from torchvision.datasets import ImageFolder
 from torch.utils.data import DataLoader, Subset
 from sklearn.model_selection import train_test_split
 
-def make_dataloaders(data_dir, batch_size=32, val_split=0.2, seed=42, img_size=299):
+def make_dataloaders(data_dir, batch_size=32, val_split=0.1, seed=42, img_size=299):
     train_tfms = transforms.Compose([
         transforms.RandomResizedCrop(img_size, scale=(0.7, 1.0)),
         transforms.RandomHorizontalFlip(),

@@ -38,6 +38,11 @@ const ImageUploader = () => {
     }
   };
 
+  // Helper to ensure clean percentage display
+  const formatConfidence = (value) => {
+    return value <= 1 ? Math.round(value * 100) : Math.round(value);
+  };
+
   return (
     <div className="bg-white p-6 rounded-2xl shadow-md w-full max-w-md text-center">
       <input
@@ -69,7 +74,7 @@ const ImageUploader = () => {
 
           {result.class_name === "Unknown" ? (
             <p className="text-red-600 font-bold mt-2">
-              ⚠️ Unknown image 
+              ⚠️ Unknown image
             </p>
           ) : (
             <p className="text-green-700 font-medium mt-2">
@@ -78,7 +83,11 @@ const ImageUploader = () => {
             </p>
           )}
 
-          
+          {/* ✅ Added confidence display */}
+          <p className="text-gray-600 mt-2">
+            Confidence: {formatConfidence(result.confidence)}%
+          </p>
+
           <div className="w-full bg-gray-200 rounded-full h-3 mt-2">
             <div
               className={`h-3 rounded-full ${
@@ -87,7 +96,7 @@ const ImageUploader = () => {
                   : "bg-green-600"
               }`}
               style={{
-                width: `${(result.confidence * 100).toFixed(2)}%`,
+                width: `${formatConfidence(result.confidence)}%`,
               }}
             ></div>
           </div>
